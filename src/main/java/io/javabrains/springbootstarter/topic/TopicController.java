@@ -18,7 +18,7 @@ public class TopicController {
 	@Autowired
 	private TopicService topicService;
 	
-	@GetMapping("/topics")
+	@GetMapping(value="/topics", produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Topic>getAllTopics() {
 		return topicService.getAllTopics();
 				
@@ -26,7 +26,7 @@ public class TopicController {
 	}
 	
 	
-	@GetMapping("/topics/{id}")
+	@GetMapping(value="/topics/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public Topic getTopic(@PathVariable String id) {
 		return topicService.getTopic(id);
 		
